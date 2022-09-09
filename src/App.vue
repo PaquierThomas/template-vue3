@@ -33,8 +33,14 @@
     </ul>
   </nav>
 
-  <!-- Affiche les pages -->
-  <router-view class="m-2 border-2 p-2" />
+  <Suspense>
+        <template #default>
+          <router-view class="m-2 border-2 p-2" />
+        </template>
+        <template #fallback>
+            Loading...
+        </template>
+    </Suspense>
 
   <card nom="test" :prix="34" favori image="" nbrSDB="5"/>
   

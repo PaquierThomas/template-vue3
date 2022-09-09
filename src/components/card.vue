@@ -9,12 +9,12 @@ defineProps ({
   Chaque "props" a un nom et un type */
   
     nom: {type: String, default : "Maison"},
-    prix: {type: Number, default :" 4400"},
+    prix: {type: Number, default : 4400},
     favori: {type: Boolean, default :false},
     image: {type: String, default :"../../public/pexels-binyamin-mellish-106399.jpg"}, // les images sont simplement l'URL absolue (depuis la racine, débute par '/' )
     lit: {type:String, default:"3" },
-    nbrSDB: {type:Number, default :"2"},
-    taille: {type:Number, default :"40" },
+    nbrSDB: {type:Number, default :2},
+    taille: {type:Number, default :40 },
   });
 </script>
 
