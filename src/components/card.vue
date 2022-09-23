@@ -11,7 +11,6 @@ defineProps ({
     adresse: {type: String, default: '3 rue des écureuils'},  
     nomMaison: {type: String, default : "Beverly Hills"},
     Code_Quartier: {type: String},
-    Id_Maison: { type: String},
     Id_Agent: {type: String},
     prix: {type: Number, default : 4400},
     favori: {type: Boolean, default :false},

@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import Formulaire from "../../components/formulaire.vue";
+import Formulaire from "../../components/formulaire.vue"
+import {supabase} from "@/supabase";
 
 defineProps({
     id: String,
@@ -8,5 +9,7 @@ defineProps({
 </script>
 
 <template>
-    <Formulaire :id="id" />
+    <div>
+        <Formulaire  :id="id"/>
+    </div>
 </template>

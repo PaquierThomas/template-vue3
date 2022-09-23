@@ -1,57 +1,33 @@
 <script setup lang="ts">
-import {supabase} from '@/supabase'
-import {label} from '@formkit/inputs'
-import { ref } from "@vue/reactivity";
-import Card from "./card.vue";
-
-import { useRouter } from "vue-router";
-
-const router = useRouter();
-
-
-// On fait une variable réactive qui réference les données
-// ATTENTION : faire une Ref pas une Reactive car :
-// c'est l'objet qui doit être réactif, pas ses props
-const maison = ref({});
-
-
-const props = defineProps(["id"]);
-
-if (props.id) {
-
- // On charge les données de la maison
-
- let { data, error } = await supabase
-
- .from("maison")
-
- .select("*")
-
- .eq("Id_Maison", props.id);
-
- if (error || !data) console.log("n'a pas pu charger le table Maison :", error);
-
- else maison.value = data[0];
-
-}
-
-
-
-async function upsertMaison(dataForm, node) {
-    console.log({dataForm, node});
-    const { data, error } = await supabase.from("maison").upsert(dataForm);
-    console.log({ data, error });
+    import {supabase} from '@/supabase'
+    import { ref } from "@vue/reactivity";
+    import Card from "@/components/card.vue";
+    import { label } from "@formkit/inputs";
+    import { useRouter } from "vue-router";
     
-    if (error) node.setErrors([error.message])
-        
-    else {
-        node.setErrors([]);
-        router.push({ name: "edit-id", params: { id: data[0].id } });
+    const router = useRouter();
+    const maison = ref({});
+    
+    const props = defineProps(["id"]);
+    if (props.id) {
+     // On charge les données de la maison
+     let { data, error } = await supabase
+     .from("maison")
+     .select("*")
+     .eq("id", props.id);
+     if (error) console.log("n'a pas pu charger le table Maison :", error);
+     else maison.value = (data as any[])[0];
     }
-
-
-
-}
+    
+    
+    async function upsertMaison(dataForm, node) {
+     const { data, error } = await supabase.from("maison").upsert(dataForm);
+     if (error || !data) node.setErrors([error?.message])
+     else {
+     node.setErrors([]);
+     router.push({ name: "edit-id", params: { id: data[0].id } });
+     }
+    }
 </script>
     
 <template>
