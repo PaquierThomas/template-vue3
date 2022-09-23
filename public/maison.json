@@ -1,29 +1,29 @@
 [
     {
-        "nom": "Beverly Springfield",
+        "nomMaison": "Beverly Springfield",
         "prix": "5000",
         "favori": true,
         "image": "/public/pexels-binyamin-mellish-106399.jpg",
-        "lit": "5",
-        "nbrSDB": "2",
-        "taille": "320"
+        "nbrLit": 5,
+        "nbrSDB": 2,
+        "superficie": "320"
     },
     {
-        "nom": "Beverly Hils",
+        "nomMaison": "Beverly Hils",
         "prix": "3200",
         "favori": false,
         "image": "/public/pexels-binyamin-mellish-106399.jpg",
-        "lit": "4",
-        "nbrSDB": "1",
-        "taille": "212"
+        "nbrLit": 4,
+        "nbrSDB": 1,
+        "superficie": "212"
     },
     {
-        "nom": "NewHope Ohio",
+        "nomMaison": "NewHope Ohio",
         "prix": "12300",
         "favori": true,
         "image": "/public/pexels-binyamin-mellish-106399.jpg",
-        "lit": "7",
-        "nbrSDB": "4",
+        "nbrLit": 7,
+        "nbrSDB": 4,
         "taille": "560"
     }
 ]

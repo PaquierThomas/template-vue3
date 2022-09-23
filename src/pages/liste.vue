@@ -1,6 +1,6 @@
 <script setup lang="ts">
     import Card from "../components/card.vue" ;
-    import maison from "../maison.json"
+    import maison from "../../public/maison.json"
 </script>
 
 

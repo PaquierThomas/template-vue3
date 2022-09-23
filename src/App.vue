@@ -47,6 +47,12 @@
           <code class="font-mono">/src/pages/authentifier</code>
         </router-link>
       </li>
+      <li>
+        <router-link class="text-red-600 underline" to="/edit/[id]">
+          lien vers
+          <code class="font-mono">/src/pages/edit/[id].vue</code>
+        </router-link>
+      </li>
       
       
     </ul>
