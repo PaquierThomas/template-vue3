@@ -5,7 +5,7 @@
         prix: 5000,
         favori: true,
         image: "/public/pexels-binyamin-mellish-106399.jpg",
-        lit: "5",
+        lit: 5,
         nbrSDB: 2,
         taille: 320,
 
@@ -15,7 +15,7 @@
         prix: 3200,
         favori: false,
         image: "/public/pexels-binyamin-mellish-106399.jpg",
-        lit: "4",
+        lit: 4,
         nbrSDB:1,
         taille: 212,
 
@@ -25,7 +25,7 @@
         prix: 12300,
         favori: true,
         image: "/public/pexels-binyamin-mellish-106399.jpg",
-        lit: "7",
+        lit: 7,
         nbrSDB: 4,
         taille: 560,
 

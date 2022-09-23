@@ -8,13 +8,13 @@ defineProps ({
   /* Les "props" servent à définir les "attributs" qui seront passés a l'instance du composant pour le personnalisé.
   Chaque "props" a un nom et un type */
   
-    nom: {type: String, default : "..."},
-    prix: {type: Number, default : "..."},
+    nom: {type: String, default : "Beverly Hills"},
+    prix: {type: Number, default : 4400},
     favori: {type: Boolean, default :false},
     image: {type: String, default :"../../public/pexels-binyamin-mellish-106399.jpg"}, // les images sont simplement l'URL absolue (depuis la racine, débute par '/' )
-    lit: {type:String, default:"..." },
-    nbrSDB: {type:Number, default : "..."},
-    taille: {type:Number, default : "..." },
+    lit: {type: Number, default: 3 },
+    nbrSDB: {type:Number, default : 2},
+    taille: {type:Number, default : 230 },
   });
 </script>
 
