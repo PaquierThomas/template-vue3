@@ -8,13 +8,17 @@ defineProps ({
   /* Les "props" servent à définir les "attributs" qui seront passés a l'instance du composant pour le personnalisé.
   Chaque "props" a un nom et un type */
   
-    nom: {type: String, default : "Beverly Hills"},
+    adresse: {type: String, default: '3 rue des écureuils'},  
+    nomMaison: {type: String, default : "Beverly Hills"},
+    Code_Quartier: {type: String},
+    Id_Maison: { type: String},
+    Id_Agent: {type: String},
     prix: {type: Number, default : 4400},
     favori: {type: Boolean, default :false},
     image: {type: String, default :"../../public/pexels-binyamin-mellish-106399.jpg"}, // les images sont simplement l'URL absolue (depuis la racine, débute par '/' )
-    lit: {type: Number, default: 3 },
+    nbrLit: {type: Number, default: 3 },
     nbrSDB: {type:Number, default : 2},
-    taille: {type:Number, default : 230 },
+    surface: {type: String, default : '230' },
   });
 </script>
 
@@ -45,13 +49,13 @@ defineProps ({
             <p class="h-8 w-12 flex-shrink-0 flex-grow-0 text-left text-xs text-gray-900 opacity-50">/month</p>
           </div>
           <p class="w-56 flex-shrink-0 flex-grow-0 self-stretch text-left text-2xl font-bold text-gray-900">
-            {{ nom }}
+            {{ nomMaison }}
           </p>
         </div>
         <heart :class="{ 'fill-red-300': favori }"></heart>
       </div>
       <p class="w-72 flex-shrink-0 flex-grow-0 self-stretch text-left text-base text-gray-900 opacity-50">
-        2821 Lake Sevilla, Palm Harbor, TX
+        {{ adresse }}
       </p>
       <svg
         width="306"
@@ -67,7 +71,7 @@ defineProps ({
       <div class="flex flex-shrink-0 flex-grow-0 items-start justify-start gap-4 self-stretch">
         <div class="relative flex flex-grow items-center justify-start gap-2">
           <bed></bed>
-          <p class="flex-shrink-0 flex-grow-0 text-left text-xs text-gray-500">{{ lit }} Beds</p>
+          <p class="flex-shrink-0 flex-grow-0 text-left text-xs text-gray-500">{{ nbrLit }} Beds</p>
         </div>
         <div class="relative flex flex-grow items-center justify-center gap-2">
           <bath></bath>
@@ -75,7 +79,7 @@ defineProps ({
         </div>
         <div class="relative flex flex-grow items-center justify-end gap-2">
           <meters></meters>
-          <p class="flex-shrink-0 flex-grow-0 text-left text-xs text-gray-500">{{taille}}m²</p>
+          <p class="flex-shrink-0 flex-grow-0 text-left text-xs text-gray-500">{{ surface }}m²</p>
         </div>
       </div>
     </div>
