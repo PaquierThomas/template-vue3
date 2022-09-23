@@ -41,6 +41,12 @@
           <code class="font-mono">/src/pages/liste-supabase</code>
         </router-link>
       </li>
+      <li>
+        <router-link class="text-red-600 underline" to="/authentifier">
+          lien vers
+          <code class="font-mono">/src/pages/authentifier</code>
+        </router-link>
+      </li>
       
       
     </ul>
