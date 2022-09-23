@@ -12,21 +12,27 @@
         </router-link>
       </li>
       <li>
-        <router-link class="text-red-600 underline" to="simple">
+        <router-link class="text-red-600 underline" to="/simple">
           lien vers
           <code class="font-mono">/src/pages/simple.vue</code>
         </router-link>
       </li>
       <li>
-        <router-link class="text-red-600 underline" to="liste">
+        <router-link class="text-red-600 underline" to="/liste">
           lien vers
           <code class="font-mono">/src/pages/liste.vue</code>
         </router-link>
       </li>
       <li>
-        <router-link class="text-red-600 underline" to="liste-fetch">
+        <router-link class="text-red-600 underline" to="/liste-fetch">
           lien vers
           <code class="font-mono">/src/pages/liste-fetch.vue</code>
+        </router-link>
+      </li>
+      <li>
+        <router-link class="text-red-600 underline" to="/edit/new">
+          lien vers
+          <code class="font-mono">/src/pages/edit/new.vue</code>
         </router-link>
       </li>
       
@@ -34,15 +40,14 @@
   </nav>
 
   <Suspense>
-        <template #default>
+      
           <router-view class="m-2 border-2 p-2" />
-        </template>
+       
         <template #fallback>
             Loading...
         </template>
     </Suspense>
 
-  <card nom="test" :prix="34" favori image="" nbrSDB="5"/>
   
 </template>
 

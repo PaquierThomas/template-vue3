@@ -1,5 +1,5 @@
 <script setup>
-const res = await fetch("/public/maison.json");
+const res = await fetch("/src/maison.json");
 const maisons = await res.json();
 
 import Card from "../components/card.vue" ;
