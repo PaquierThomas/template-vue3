@@ -35,6 +35,17 @@ if (error) console.log("n'a pas pu charger la table quartiercommune :", error);
         <li
         v-for="q in listeQuartier"
         :key="q.Code_Quartier">
+
+        <RouterLink
+        :to="{
+          name: 'quartier-id',
+          params: { id: q.Code_Quartier },
+        }">
+        <!-- Appel nom quartier-->
+        {{ q.quartier_nom }}
+
+      </RouterLink>
+
         </li>
       </ul>
    </DisclosurePanel>
