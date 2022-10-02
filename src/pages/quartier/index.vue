@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { supabase } from "../../supabase";
+import groupBy from "lodash/groupBy";
 const { data, error }= await supabase.from("quartiercommune").select("*");
 if (error) console.log("n'a pas pu charger la table quartiercommune :", error);
 
