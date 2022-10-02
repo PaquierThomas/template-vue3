@@ -7,6 +7,9 @@ export const supabase = createClient(supabaseUrl, supabaseAnonKey)
 
 export const user = ref(supabase.auth.user())
 
+// Pour tester dans la console
+globalThis.supabase = supabase
+
 supabase.auth.onAuthStateChange(() => {
 
     user.value = supabase.auth.user()

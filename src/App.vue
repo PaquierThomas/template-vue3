@@ -54,9 +54,15 @@
         </router-link>
       </li>
       <li>
-        <router-link class="text-red-600 underline" to="/quartier/index">
+        <router-link class="text-red-600 underline" to="/quartier">
           lien vers
           <code class="font-mono">/src/pages/quartier/IndexQuartier</code>
+        </router-link>
+      </li>
+      <li>
+        <router-link class="text-red-600 underline" to="/quartier/new">
+          lien vers
+          <code class="font-mono">/src/pages/quartier/new</code>
         </router-link>
       </li>
       
