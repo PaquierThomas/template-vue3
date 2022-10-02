@@ -1,8 +1,33 @@
 <script setup lang="ts">
-    defineProps<{
-      id: string;
-    }>();
-    // TODO
+    import card from "@/components/card.vue";
+    import { label } from "@formkit/inputs";
+    import { useRouter } from "vue-router";
+    import { ref } from "@vue/reactivity";
+    import { supabase } from "@/supabase";
+
+    const router = useRouter();
+    const quartier = ref({});
+
+    const props = defineProps(["id"]);
+
+    if (props.id) {
+        // On charge les données de la maison
+        let { data, error } = await supabase
+            .from("quartier")
+            .select("*")
+            .eq("quartier_nom", props.id);
+        if (error) console.log("n'a pas pu charger le table 'quartier' :", error);
+        else quartier.value = (data as any[])[0];
+    }
+
+    async function upsertQuartier(dataForm, node) {
+     const { data, error } = await supabase.from("quartier").upsert(dataForm);
+     if (error || !data) node.setErrors([error?.message])
+     else {
+     node.setErrors([]);
+     router.push({ name: "edit-id", params: { id: data[0].id } });
+     }
+    }
 </script>
 
 <template>
