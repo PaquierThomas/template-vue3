@@ -1,12 +1,12 @@
 <script setup lang="ts">
     import FormulaireQuartier from "../../components/FormulaireQuartier.vue";
     defineProps<{
-      id: string;
+      Code_Quartier: string;
     }>();
 </script>
 
 <template>
     <div class="p-2">
-    <FormulaireQuartier :id="id" />
+    <FormulaireQuartier :id="Code_Quartier" />
     </div>
 </template>
