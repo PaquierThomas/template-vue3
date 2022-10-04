@@ -39,6 +39,23 @@
         value: commune.commune_code,
         label: commune.commune_nom,
     }));
+
+    async function supprimerQuartier() {
+    const { data, error } = await supabase
+        .from("quartier")
+        .delete()
+        .match({ Code_Quartier: quartier.value.Code_Quartier });
+    if (error) {
+        console.error(
+        "Erreur à la suppression de ",
+        quartier.value,
+        "erreur :",
+        error
+        );
+    } else {
+        router.push("/quartier");
+    }
+    }
 </script>
 
 <template>

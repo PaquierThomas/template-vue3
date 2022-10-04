@@ -28,6 +28,11 @@
      router.push({ name: "edit-id", params: { id: data[0].id } });
      }
     }
+
+    const { data: dataQuartierCommune, error } = await supabase
+        .from("quartiercommune")
+        .select("*");
+    if (error) console.log("n'a pas pu charger la vue quartiercommune :", error);
 </script>
     
 <template>
@@ -56,6 +61,12 @@
                 <FormKit name="nbrSDB" label="Nombre de salle de bain" type="number" label-class="font-bold" />
                 <FormKit name="surface" label="surface" type="text" label-class="font-bold" />
                 <FormKit name="favori" label="Mettre en valeur" type="checkbox" wrapper-class="flex p-2"/>
+                <FormKit name="Code_Quartier" label="Quartier" type="select">
+                    <option value="" :disabled="true">Choisir un quartier...</option>
+                    
+                </FormKit>
+                    
+                
             </FormKit>
         </div>
     </div>
